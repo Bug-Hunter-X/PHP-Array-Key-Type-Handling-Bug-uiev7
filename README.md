@@ -1,0 +1,5 @@
+# PHP Array Key Type Handling Bug
+This example demonstrates a subtle bug in PHP related to how it handles integer and string keys in arrays. Due to PHP's loose typing, using numerically equivalent integer and string keys ('10' vs 10) does not result in them referencing the same array element. This can lead to unexpected behavior when incrementing array values. The solution showcases a safer approach using type checking and handling to prevent these errors.
+
+## Bug
+The bug lies in the `increment_array_value` function. When calling the function with both an integer key (10) and a string key ('10'), PHP treats them as separate keys despite their numeric equivalence. This means that incrementing the integer key does not affect the value associated with the string key and vice versa, leading to inconsistent values.
